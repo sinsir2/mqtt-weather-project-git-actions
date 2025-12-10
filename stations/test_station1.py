@@ -12,7 +12,7 @@ def is_valid_humidity(h):
 
 
 def test_temperature_valid_range():
-    t = -999
+    t = 30
     assert is_valid_temperature(t)
 
 
