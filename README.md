@@ -1,29 +1,23 @@
-# weather-app
+# MQTT Wetterstationen
 
-This template should help get you started developing with Vue 3 in Vite.
+Dieses Projekt simuliert verteilte Wetterstationen, die Messdaten über MQTT an einen Broker senden.
 
-## Recommended IDE Setup
+## Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Starte alles mit:
+   ```bash
+   docker-compose up --build
+   ```
 
-## Customize configuration
+2. Öffne ein neues Terminal und starte den Subscriber:
+   ```bash
+   cd subscriber
+   pip install -r requirements.txt
+   python main.py
+   ```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Aufgabe
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Abonniere Wetterdaten vom Topic `weather`
+- Speichere die Daten sinnvoll (z. B. JSON-Datei, SQLite)
+- Erstelle einfache Auswertungen (Durchschnitt, Verlauf, usw.)
