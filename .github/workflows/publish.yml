@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: ["Test", "Lint"]
+    workflows: ["Test", "Lint", "Publish"]
     types:
       - completed
     branches:
