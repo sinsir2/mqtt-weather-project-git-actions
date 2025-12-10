@@ -5,6 +5,8 @@ on:
     workflows: ["Lint"]
     types:
       - completed
+    branches:
+      - main
   pull_request:
     branches:
       - main
