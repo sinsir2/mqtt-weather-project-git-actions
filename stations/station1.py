@@ -22,7 +22,6 @@ while True:
     if random.random() < 0.005:
         print("Simulierter Totalausfall")
         break
-         
     data = {
         "stationId": station_id,
         "temperature": temperature,
