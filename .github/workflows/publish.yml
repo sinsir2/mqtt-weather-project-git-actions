@@ -19,7 +19,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ sinsir2 }}
+          username: ${{ secrets.USER }}
           password: ${{ secrets.TOKEN }}
       
       - name: Build and push Docker image
@@ -28,5 +28,5 @@ jobs:
           context: ./stations
           push: true
           tags: |
-            ${{ sinsir2 }}/mqtt-weather-station:latest
-            ${{ sinsir2 }}/mqtt-weather-station:${{ github.sha }}
+            ${{ secrets.USER }}/mqtt-weather-station:latest
+            ${{ secrets.USER }}/mqtt-weather-station:${{ github.sha }}
