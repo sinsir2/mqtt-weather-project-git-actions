@@ -15,21 +15,21 @@ client = mqtt.Client()
 client.connect(broker, port, 60)
 
 while True:
-    if random.random() < 0.01:
-        temperature = -999
-    else:
-        temperature = round(random.uniform(15, 30), 1)
-        
-    if random.random() < 0.005:
-        print("Simulierter Totalausfall")
-        break
+	if random.random() < 0.01:
+		temperature = -999
+	else:
+		temperature = round(random.uniform(15, 30), 1)
+		
+	if random.random() < 0.005:
+		print("Simulierter Totalausfall")
+		break
 
-    data = {
-        "stationId": station_id,
-        "temperature": temperature,
-        "humidity": round(random.uniform(30, 60), 1),
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    }
-    client.publish(topic, json.dumps(data))
-    print(f"[{station_id}] Published: {data}")
-    time.sleep(interval)
+	data = {
+		"stationId": station_id,
+		"temperature": temperature,
+		"humidity": round(random.uniform(30, 60), 1),
+		"timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+	}
+	client.publish(topic, json.dumps(data))
+	print(f"[{station_id}] Published: {data}")
+	time.sleep(interval)
