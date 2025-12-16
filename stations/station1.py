@@ -35,7 +35,7 @@ while True:
 
 def validate_temperature(temperature):
     if temperature == -999:
-        return False 
+        return False
     return True
 
 
