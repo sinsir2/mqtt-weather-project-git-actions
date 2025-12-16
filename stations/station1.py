@@ -32,7 +32,7 @@ def main():
 
         if random.random() < 0.005:
             print("Simulierter Totalausfall")
-            break 
+            break
 
         data = {
             "stationId": station_id,
