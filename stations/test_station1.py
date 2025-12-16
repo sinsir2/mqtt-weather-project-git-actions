@@ -17,4 +17,4 @@ def test_humidity_range():
 
 def test_humidity_failure_case():
     h = 120
-    assert not station1.validate_temperature(h)
+    assert not station1.validate_humidity(h)
