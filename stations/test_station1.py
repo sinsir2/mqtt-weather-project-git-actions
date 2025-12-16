@@ -4,17 +4,17 @@ import pytest
 import station1
 
 def test_temperature_valid_range():
-    t = -999
+    t = 35
     assert station1.validate_temperature(t)
 
 def test_temperature_failure_case():
-    t = 35
+    t = -999
     assert not station1.validate_temperature(t)
 
 def test_humidity_range():
-    h = 120
+    h = 45
     assert station1.validate_humidity(h)
 
 def test_humidity_failure_case():
-    h = 45
+    h = 120
     assert not station1.validate_humidity(h)
