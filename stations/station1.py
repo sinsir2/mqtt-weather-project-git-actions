@@ -4,14 +4,6 @@ import random
 import json
 import paho.mqtt.client as mqtt
 
-def validate_temperature(temperature):
-    if temperature == -999:
-        return False 
-    return True
-
-def validate_humidity(humidity):
-    return 0 <= humidity <= 100
-
 broker = "mosquitto"
 port = 1883
 topic = "weather"
@@ -40,3 +32,11 @@ while True:
     client.publish(topic, json.dumps(data))
     print(f"[{station_id}] Published: {data}")
     time.sleep(interval)
+    
+def validate_temperature(temperature):
+    if temperature == -999:
+        return False 
+    return True
+
+def validate_humidity(humidity):
+    return 0 <= humidity <= 100
