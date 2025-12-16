@@ -3,31 +3,31 @@ import time
 import random
 import json
 import paho.mqtt.client as mqtt
- 
+
 def validate_temperature(temperature):
     if temperature == -999:
         return False 
     return True
- 
+
 def validate_humidity(humidity):
     return 0 <= humidity <= 100
- 
+
 broker = "mosquitto"
 port = 1883
 topic = "weather"
- 
+
 station_id = os.getenv("STATION_ID", "WS-XX")
 interval = int(os.getenv("INTERVAL", "5"))
 random
 client = mqtt.Client()
 client.connect(broker, port, 60)
- 
+
 while True:
     if random.random() < 0.01:
         temperature = -999
     else:
         temperature = round(random.uniform(15, 30), 1)
-        
+      
     if random.random() < 0.005:
         print("Simulierter Totalausfall")
         break
@@ -40,5 +40,3 @@ while True:
     client.publish(topic, json.dumps(data))
     print(f"[{station_id}] Published: {data}")
     time.sleep(interval)
- 
- 
