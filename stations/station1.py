@@ -32,10 +32,12 @@ while True:
     print(f"[{station_id}] Published: {data}")
     time.sleep(interval)
 
+
 def validate_temperature(temperature):
     if temperature == -999:
         return False 
     return True
+
 
 def validate_humidity(humidity):
     return 0 <= humidity <= 100
